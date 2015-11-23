@@ -368,15 +368,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Marc Dion (UP392GYJYD)";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator4.3]" = "iPhone Developer: Marc Dion (UP392GYJYD)";
+				CODE_SIGN_IDENTITY = "Marc Clint Dion";
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator4.3]" = "Marc Clint Dion";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "E1BB4FB4-2A62-45E8-BCEE-6B87DEF584F4";
-				"PROVISIONING_PROFILE[sdk=iphonesimulator4.3]" = "E1BB4FB4-2A62-45E8-BCEE-6B87DEF584F4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphonesimulator4.3]" = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm6 armv7";
 			};
@@ -386,16 +386,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Marc Dion (UP392GYJYD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Marc Dion (UP392GYJYD)";
+				CODE_SIGN_IDENTITY = "Marc Clint Dion";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Marc Clint Dion";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "E1BB4FB4-2A62-45E8-BCEE-6B87DEF584F4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E1BB4FB4-2A62-45E8-BCEE-6B87DEF584F4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
