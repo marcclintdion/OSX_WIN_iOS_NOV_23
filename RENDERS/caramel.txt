@@ -1,0 +1,41 @@
+void main()
+{
+
+
+    nDotL0                  =   max(dot(normalize(normal_PASS.xyz), normalize(light0_POS.xyz)), 0.0);
+   
+    baseColor               =   texture2D(ColorMAP_HIGH,  uv0_PASS.xy);
+ 
+
+    bakedNormals            =   texture2D(NormalMAP,     uv0_PASS.xy);
+    bakedNormals.xyz        =   normalize(bakedNormals.xyz + (-0.5));
+    bakedNormals.zy         =   bakedNormals.zy * -1.0;
+    nDotL1                  =   max(dot(bakedNormals.xyz, normalize(light1_posPASS.xyz)), 0.0);//     nDotL1              =  max(dot(bakedNormals, normalize(light1_posPASS.xyz - normalize(gl_FragCoord.xyz))), 0.0);
+
+
+    wsR                     =   reflect(normalize(inverseEye.xyz), normalize(bakedNormals.xyz));
+    cubeMapColor            =   vec3(textureCube(EnvMap, wsR));
+   
+    
+    vec4 diffuseColor       =   baseColor * nDotL0 * baseColor.a * 3.0;
+ 
+ 
+    specColor_HIGH          =   vec4(max( pow(nDotL1, 512.0 * baseColor.a * baseColor.a) , 0.0)) * vec4(2.0, 1.755842, 1.404384, 1.0)  * pow(bakedNormals.a, 60.0) ;
+
+
+    vec4 copperSpecA        =   baseColor * vec4(cubeMapColor, 1.0) - (1.0 - bakedNormals.a) * 0.1;
+
+    vec4 copperSpecB        =   baseColor * specColor_HIGH * 3.6;
+ 
+
+  //gl_FragColor            =   mix(diffuseColor,  copperSpecA *1.0 * 1.673991 +  copperSpecB, pow(bakedNormals.a, 15.0)) ;
+
+    
+   
+    
+    float specular_RED      =   nDotL0* nDotL0* nDotL0* nDotL0;
+    float specular_GREEN    =   nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0;
+    float specular_BLUE     =   nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0* nDotL0;
+    gl_FragColor            =   vec4(specular_RED, specular_GREEN, specular_BLUE, 1.0);
+    
+    
